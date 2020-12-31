@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dango Bookmark List</title>
+</head>
+
+<body>
+    <div id = "content">
+        <h1>Bookmark List</h1>
+
+        <ul>
+            <!--object_list is from ListView-->
+            {% for bookmark in object_list %}
+                <!--{{ bookmark }} calls __str__() method-->
+                <li><a href="{% url 'detail' bookmark.id %}">{{ bookmark }}</a></li>
+            {% endfor %}
+        </ul>>
+    </div>
+</body>
+</html>
