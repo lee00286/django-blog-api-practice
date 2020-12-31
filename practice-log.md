@@ -7,6 +7,7 @@ Blog API with Django Rest Framework
 Date Links
 
 * [2020-12-23](#2020-12-23-wed)
+* [2020-12-31](#2020-12-31-thu)
 
 ---
 
@@ -45,6 +46,7 @@ Update `settings.py`
 * Create `MEDIA_URL` and `MEDIA_ROOT` for upload functionality
 
 ```
+@mysite/settings.py
 ALLOWED_HOSTS = ['192.168.56.101', 'localhost', '127.0.0.1']
 ...
 TEMPLATES = [
@@ -77,11 +79,12 @@ MEDIA_ROOT = [os.path.join(BASE_DIR, 'media')]
 Update `settings.py`
 
 ```
+@mysite/settings.py
 from dotenv import load_dotenv
 load_dotenv()
 ```
 
-**Create tables**
+**Migration**
 
 ```
 $ python3 manage.py migrate
@@ -97,4 +100,30 @@ $ python3 manage.py createsuperuser
 
 ```
 $ python3 manage.py startapp bookmark
+```
+
+## 2020-12-31 Thu
+
+### Develop database tables
+
+**Create bookmark table**
+
+Use `bookmmark/models.py`
+
+Table columns:
+
+* title: CharField
+* url: URLField
+
+**Display bookmark table**
+
+Use `bookmmark/admin.py`
+
+Display `id`, `title`, and `url` on admin page
+
+**Migration**
+
+```
+$ python3 manage.py makemigrations bookmark
+$ python3 manage.py migrate
 ```
