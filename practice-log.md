@@ -113,7 +113,7 @@ Show bookmark list using a template files
 * `bookmark_list.html`
 * `bookmark_detail.html`
 
-### [Blog App] URL configuration
+### [Blog App] URL configuration plan
 
 | URL Pattern | View | Template |
 | :-----------: | :------------: | :------------: |
